@@ -1,3 +1,7 @@
+/* Imports */
+@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light');
+
+
 /* CSS Reset */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -18,6 +22,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+  /*  border: 1px solid red;*/
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -44,41 +49,115 @@ table {
 }
 
 /******************************************/
+html,
+main {
+   margin:0;
+   padding:0;
+   height:100%;
+}
 
 body {
   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
-}
-p {
-  margin-left: 15px;
+  min-height: 100%;
+  position: relative;
 }
 header {
-  background-color: LightSteelBlue;
+   padding:10px 0;
+}
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 10px;
+  padding-bottom: 2.5em;
+  height: 100%;
+}
+p {
+  padding-left: 20px;
+}
+footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:2em;   /* Height of the footer */
+}
+
+/*********** HEADER *****************/
+header {
+  background: LightSteelBlue url(img/2516.svg) top/cover no-repeat;
   width: 100%;
-  text-align: center;
-  border-bottom: solid steelBlue 10px;
-  color: white;
+  border-bottom: 1px solid #282828;
+  color: #ddd;
+  box-shadow: 0 0px 1px 1px #888888;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 header h1 {
-  padding: 15px 0;
+  padding: 15px 0 5px;
+  font-family: 'Shadows Into Light', cursive;
   font-size: 2em;
   font-weight: bold;
+
 }
 header h2 {
   padding-bottom: 10px;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 1em;
+
+}
+.headerWrapper {
+  max-width: 960px;
+  margin: 0 auto;
+
+}
+header nav {
+  float: right;
+  position: relative;
+  bottom: 30px;
+}
+header nav li {
+  display: inline;
+  margin-left: 15px;
+}
+header a {
+  text-decoration: none;
+  color: inherit;
 }
 
+header a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Float */
+.hvr-float {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-float:hover, .hvr-float:focus, .hvr-float:active {
+  -webkit-transform: translateY(-8px);
+  transform: translateY(-8px);
+}
+
+/*********** MAIN *****************/
+
 h3 {
-  background-color: Black;
-  color: white;
-  padding: 20px;
-  margin: 10px auto;
-  width: 400px;
-  border-radius: 5px;
+  font-family: 'Shadows Into Light', cursive;
+	font-size: 1.5em;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 100;
+	line-height: 1.6em;
   text-align: center;
-  font-weight: bold;
-  text-transform: uppercase;
-  border-top: solid red 3px;
+  color: #555;
 }
 section{
   margin-bottom: 15px;
@@ -101,20 +180,59 @@ section{
   width: 1.3em;
 }
 
+/*********** FOOTER *****************/
 footer {
-  border-top: 1px solid black;
+  background: #1f1f1f url(img/2516.svg) bottom/cover no-repeat;
+  padding: 10px 0;
+  border-top: 1px solid #282828;
   margin-top: 8px;
-  text-align: center;
-  background-color: white;
+  color: #a5a5a5;
+  height: 2em;
+  /*position: fixed;
+  bottom: 0px;
+  width: 100%;*/
+  /*text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;*/
+
+}
+.footerWrapper {
+  max-width: 960px;
+  margin: 0 auto;
 }
 footer .fa  {
-  color: grey;
-
-
+  color: #a5a5a5;
+  padding: 2px;
 }
 footer .fa-twitter:hover {
   color: #4099FF;
 }
-footer .fa-instagram:hover {
-  color: #515BD4;
+footer .fa-github:hover {
+  color: #6e5494;
+}
+footer .fa-linkedin:hover {
+  color: #0077B5;
+}
+footer .fa-instagram:hover  {
+  background: radial-gradient(circle at 33% 100%, #FED373 4%, #F15245 30%, #D92E7F 62%, #9B36B7 85%, #515ECF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+.socialIcons {
+  float: right;
+  display: inline;
+
+}
+.copy {
+  float: left;
+  display: inline;
+  padding-top: 10px;
+
+}
+
+
+/*********** CLEAR FIX *****************/
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
 }
